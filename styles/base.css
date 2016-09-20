@@ -1,0 +1,51 @@
+body {
+  font-family: 'Lato', 'Arial', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-size: .8em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+/****************
+Colors
+*****************/
+
+body {
+  background-color: #fff;
+}
+
+header {
+  background-color: #6A9EBA;
+}
+
+p {
+  color: #595959;
+}
+
+nav ul {
+  background-color: #2C6786;
+}
+
+header a {
+  color: white;
+}
+
+a {
+  color: #2C6786;
+}
+
+nav a:hover {
+  color: #122d3b;
+}

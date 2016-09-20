@@ -1,0 +1,42 @@
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  text-align: center;
+}
+
+/****************
+Header
+****************/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid #2C6786;
+}
+
+#name h1, h2{
+  padding: 0;
+  margin: .25rem .75rem;
+  letter-spacing: 1px;
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+header h2 {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+.icon-menu {
+  font-size: 3em;
+  color: white;
+  margin: .75rem;
+}
