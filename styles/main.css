@@ -14,6 +14,10 @@ p {
   font-size: .8em;
 }
 
+h3 {
+  font-size: 1em;
+}
+
 /****************
 Header
 ****************/
@@ -58,9 +62,10 @@ nav li {
 Portfolio items
 *****************/
 
-#wrapper {
+.wrapper {
   width: 90%;
   margin: 0 auto;
+  text-align: center;
 }
 
 #portfolio {
@@ -100,8 +105,12 @@ nav ul {
   background-color: #2C6786;
 }
 
-a {
+header a {
   color: white;
+}
+
+a {
+  color: #2C6786;
 }
 
 nav a:hover {
