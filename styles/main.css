@@ -81,8 +81,9 @@ Portfolio items
   margin: 0 auto;
 }
 
-#portfolio a {
-  border-radius: 10px;
+#portfolio img {
+  border-radius: 14px;
+  box-shadow: 4px 3px 8px #595959;
 }
 
 
