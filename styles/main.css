@@ -10,6 +10,10 @@ img {
   max-width: 100%;
 }
 
+p {
+  font-size: .8em;
+}
+
 /****************
 Header
 ****************/
@@ -51,6 +55,32 @@ nav li {
 }
 
 /****************
+Portfolio items
+*****************/
+
+#wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#portfolio {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+#portfolio li {
+  max-width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#portfolio a {
+  border-radius: 10px;
+}
+
+
+/****************
 Colors
 *****************/
 
@@ -60,6 +90,10 @@ body {
 
 header {
   background-color: #6A9EBA;
+}
+
+p {
+  color: #595959;
 }
 
 nav ul {
