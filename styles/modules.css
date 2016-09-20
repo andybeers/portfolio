@@ -2,12 +2,12 @@
 Nav
 ****************/
 
-#main-nav {
+.main-nav {
   margin: 0;
   padding: 0;
 }
 
-#main-nav ul {
+.main-nav ul {
   display: none;
   list-style: none;
   /*text-align: center;*/
@@ -15,7 +15,7 @@ Nav
   padding: .25em;*/
 }
 
-#main-nav:hover ul {
+.main-nav:hover ul {
   display: block;
 }
 
