@@ -72,6 +72,7 @@ Portfolio items
   list-style: none;
   width: 100%;
   padding: 0;
+  margin-top: 1em;
 }
 
 #portfolio li {
@@ -117,24 +118,45 @@ nav a:hover {
   color: #122d3b;
 }
 
-/*@media only screen and (min-width: 500px) {
-  /*header {
+@media only screen and (min-width: 550px) {
+
+  header {
+    border-bottom: 6px solid #2C6786;
     display: flex;
-    border-bottom: 6px solid;
-  }*/
-
-  /*nav ul {
-    display: inline-block;
-    color: white;
-    float:right;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
-  nav li {
-    display: inline-block;
-    border: 1px solid red;
+  nav ul {
+    background: none;
   }
 
-}*/
+  #name {
+    text-align: left;
+  }
+
+  header h1 {
+    font-size: 2em;
+    padding-left: 0;
+  }
+
+  header h2 {
+    font-size: 1.5em;
+  }
+
+  nav a {
+    font-size: 1.3em;
+  }
+
+  #portfolio {
+    display: flex;
+  }
+
+  #portfolio li {
+    width: 45%;
+  }
+
+}
 
 
 /*&#9776 burger menu unicode*/
