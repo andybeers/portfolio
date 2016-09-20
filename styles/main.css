@@ -1,0 +1,30 @@
+header {
+  height: 120px;
+  background-color: #0d0d0d;
+  color: white;
+}
+
+nav {
+  /*display: none;*/
+  color: white;
+}
+
+a {
+  text-decoration:
+}
+
+@media only screen and (min-width: 500px) {
+  /*header {
+    display: flex;
+  }*/
+
+  nav {
+    /*display: block;*/
+    float: right;
+    border: 1px solid red;
+  }
+
+}
+
+
+/*&#9776 burger menu unicode*/
