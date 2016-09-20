@@ -2,15 +2,21 @@
 Nav
 ****************/
 
-nav {
-  display:none;
+#main-nav {
+  margin: 0;
+  padding: 0;
 }
 
-nav ul {
+#main-nav ul {
+  display: none;
   list-style: none;
   /*text-align: center;*/
   /*margin: .25em auto;
   padding: .25em;*/
+}
+
+#main-nav:hover ul {
+  display: block;
 }
 
 nav li {
@@ -58,10 +64,6 @@ Portfolio items
 
   nav ul {
     background: none;
-  }
-
-  #name {
-    text-align: left;
   }
 
   header h1 {
