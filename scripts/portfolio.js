@@ -20,7 +20,7 @@ Portfolio.prototype.toHtml = function() {
   $newPortfolio.find('.description').html(this.description);
   $newPortfolio.find('.preview a').attr('href', this.linkUrl);
   $newPortfolio.find('time[pubdate]').attr('title', this.postedOn);
-  $newPortfolio.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
+  $newPortfolio.find('time').html('about ' + parseInt((new Date() - new Date(this.postedOn))/60/60/24/1000) + ' days ago');
 
   $newPortfolio.removeClass('template');
 
