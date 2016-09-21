@@ -32,12 +32,13 @@ Header
   letter-spacing: 1px;
 }
 
-.main-header h1 {
+#name h1 {
   font-size: 2em;
   font-weight: 700;
+  margin-top: 0;
 }
 
-.main-header h2 {
+#name h2 {
   font-size: 1.25em;
   font-weight: 400;
 }

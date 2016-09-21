@@ -16,7 +16,7 @@ var portfolioData = [
     previewAlt: 'Placeholder image',
     linkUrl: '#',
     description: 'I am a description placeholder.',
-    publishedOn: '2016-09-20',
+    postedOn: '2016-09-20',
   },
   {
     title: '#',
@@ -25,7 +25,7 @@ var portfolioData = [
     previewAlt: 'Placeholder image',
     linkUrl: '#',
     description: 'I am a description placeholder.',
-    publishedOn: '2016-09-20',
+    postedOn: '2016-09-20',
   },
   {
     title: '#',
@@ -34,7 +34,7 @@ var portfolioData = [
     previewAlt: 'Placeholder image',
     linkUrl: '#',
     description: 'I am a description placeholder.',
-    publishedOn: '2016-09-20',
+    postedOn: '2016-09-20',
   }
 
 ];
