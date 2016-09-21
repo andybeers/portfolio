@@ -10,9 +10,6 @@ function Portfolio (opts) {
   this.postedOn = opts.postedOn;
 }
 
-// var firstArticle = ourLocalData[0];
-// new Article(firstArticle);
-
 Portfolio.prototype.toHtml = function() {
   var $newPortfolio = $('.template').clone();
 
@@ -42,3 +39,8 @@ portfolioData.forEach(function(ele) {
 portfolioItems.forEach(function(a) {
   $('#portfolio').append(a.toHtml());
 });
+
+
+// unsure why we included this in our class demonstration
+// var firstArticle = ourLocalData[0];
+// new Article(firstArticle);

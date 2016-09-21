@@ -33,9 +33,10 @@ body {
 
 .main-header {
   background-color: #6A9EBA;
+  color: white;
 }
 
-h1 {
+.wrapper h1 {
   color: #595959
 }
 
