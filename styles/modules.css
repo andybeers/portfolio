@@ -45,8 +45,8 @@ Portfolio items
 }
 
 #portfolio img {
-  border-radius: 14px;
-  box-shadow: 4px 3px 8px #595959;
+  /*border-radius: 14px;*/
+  /*box-shadow: 4px 3px 8px #595959;*/
 }
 
 @media only screen and (min-width: 550px) {
