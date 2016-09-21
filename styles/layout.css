@@ -1,0 +1,50 @@
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+footer {
+  text-align: center;
+}
+
+/****************
+Header
+****************/
+
+.main-header {
+  border-bottom: 5px solid #2C6786;
+}
+
+#name {
+  float: left;
+}
+
+#name h1, h2{
+  padding: 0;
+  margin: .25rem .75rem;
+  letter-spacing: 1px;
+}
+
+.main-header h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.main-header h2 {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+.icon-menu {
+  float: right;
+  font-size: 3em;
+  color: white;
+  margin: .75rem;
+}
