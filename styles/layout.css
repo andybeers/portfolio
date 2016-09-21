@@ -4,6 +4,12 @@
   clear: both;
 }
 
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+
 footer {
   text-align: center;
 }
@@ -13,10 +19,11 @@ Header
 ****************/
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 5px solid #2C6786;
+}
+
+#name {
+  float: left;
 }
 
 #name h1, h2{
@@ -36,6 +43,7 @@ header h2 {
 }
 
 .icon-menu {
+  float: right;
   font-size: 3em;
   color: white;
   margin: .75rem;

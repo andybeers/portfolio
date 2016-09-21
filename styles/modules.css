@@ -9,43 +9,39 @@ Nav
 
 .main-nav ul {
   display: none;
+  clear: left;
   list-style: none;
-  /*text-align: center;*/
-  /*margin: .25em auto;
-  padding: .25em;*/
+  text-align: center;
+  margin: 0;
+  padding: .25em;
 }
 
 .main-nav:hover ul {
   display: block;
 }
 
-nav li {
-  /*display: inline;*/
-  /*padding: .25em .4em;*/
-  /*margin: .5em;*/
+.main-nav li {
+  text-align: center;
+  padding: .25em;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
 }
 
 /****************
 Portfolio items
 *****************/
 
-.wrapper {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-}
-
 #portfolio {
   list-style: none;
   width: 100%;
   padding: 0;
-  margin-top: 1em;
+  margin: 1em auto;
+  text-align: center;
 }
 
 #portfolio li {
-  max-width: 80%;
-  text-align: center;
-  margin: 0 auto;
+  /*text-align: center;*/
+  /*margin: 0 auto;*/
 }
 
 #portfolio img {
