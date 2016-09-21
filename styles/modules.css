@@ -51,7 +51,7 @@ Portfolio items
 
 @media only screen and (min-width: 550px) {
 
-  header {
+  .main-header {
     border-bottom: 6px solid #2C6786;
     display: flex;
     justify-content: space-between;
@@ -62,12 +62,12 @@ Portfolio items
     background: none;
   }
 
-  header h1 {
+  .main-header h1 {
     font-size: 2em;
     padding-left: 0;
   }
 
-  header h2 {
+  .main-header h2 {
     font-size: 1.5em;
   }
 
