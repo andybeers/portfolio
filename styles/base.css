@@ -35,6 +35,10 @@ body {
   background-color: #6A9EBA;
 }
 
+h1 {
+  color: #595959
+}
+
 p {
   color: #595959;
 }
@@ -48,8 +52,9 @@ p {
 }
 
 a {
-  color: #2C6786;
+  color: white;
 }
+
 
 nav a:hover {
   color: #122d3b;
