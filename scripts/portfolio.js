@@ -29,7 +29,7 @@ Portfolio.prototype.toHtml = function() {
 };
 
 portfolioData.sort(function(curElem, nextElem) {
-  return (new Date(nextElem.publishedOn)) - (new Date(curElem.publishedOn));
+  return (new Date(nextElem.postedOn)) - (new Date(curElem.postedOn));
 });
 
 portfolioData.forEach(function(ele) {
