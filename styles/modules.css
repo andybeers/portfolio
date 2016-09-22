@@ -55,6 +55,7 @@ Portfolio items
 #portfolio article {
   margin: .25em;
   padding: .75em 1em;
+  border: 3px solid #ffe2d2;
   border-radius: 14px;
 }
 
