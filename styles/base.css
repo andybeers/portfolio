@@ -56,7 +56,10 @@ a {
   color: white;
 }
 
-
 nav a:hover {
   color: #122d3b;
+}
+
+#portfolio article {
+  background-color: #fff3f2
 }

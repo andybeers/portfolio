@@ -9,6 +9,9 @@ tabs.handleMainNav = function () {
       $('#about').fadeIn();
     }
   });
+
+  $('.main-nav .tab:first').click();
+  
 };
 
 tabs.handleMainNav();
