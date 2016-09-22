@@ -10,6 +10,19 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
   <title>Andy Beers | Developer</title>
+  <script id="portfolio-template" type="text/x-handlebars-template">
+    <article>
+      <header>
+        <h1 class="title">{{title}}</h1>
+        <div class="preview">
+          <a href="{{linkUrl}}"><img src="{{previewUrl}}" alt="{{previewAlt}}"></a>
+          <p class="description">{{{description}}}</p>
+          {{postStatus}}
+        </div>
+      </header>
+      <section class="article-body"></section>
+    </article>
+  </script>
 </head>
 
 <body>
@@ -30,19 +43,7 @@
   </header>
 
   <div class="wrapper">
-    <section id="portfolio" class="tab-content">
-      <article class="template">
-        <header>
-          <h1 class="title">Title</h1>
-          <div class="preview">
-            <a href=""><img src="#" alt="#"></a>
-            <p class="description"></p>
-            <p>Posted <time pubdate datetime="2000-01-01" class="pub"></time></p>
-          </div>
-        </header>
-        <section class="article-body"></section>
-      </article>
-    </section>
+    <section id="portfolio" class="tab-content"></section>
     <section id="about" class="tab-content">
       <div class="profile">
         <img src="img/profile.jpg">
@@ -51,6 +52,7 @@
     </section>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script src="scripts/portfolioItems.js"></script>
   <script src="scripts/portfolio.js"></script>
   <script src="scripts/tabs.js"></script>
