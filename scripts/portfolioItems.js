@@ -11,7 +11,7 @@ var portfolioData = [
   },
   {
     title: '#',
-    category: 'web-app',
+    category: '#',
     previewUrl: 'img/placeholder.png',
     previewAlt: 'Placeholder image',
     linkUrl: '#',
