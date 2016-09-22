@@ -48,7 +48,7 @@ p {
   background-color: #2C6786;
 }
 
-.main-header a {
+.main-header li {
   color: white;
 }
 
@@ -56,7 +56,10 @@ a {
   color: white;
 }
 
-
 nav a:hover {
   color: #122d3b;
+}
+
+#portfolio article {
+  background-color: #fff3f2
 }
