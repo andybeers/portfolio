@@ -10,13 +10,12 @@ Portfolio.prototype.toHtml = function() {
 
   var source = $('#portfolio-template').html();
   var template = Handlebars.compile(source);
-  var html = template(this);
 
   this.daysAgo = parseInt((new Date() - new Date(this.postedOn))/60/60/24/1000);
   this.postStatus = this.postedOn ? 'posted ' + this.daysAgo + ' days ago' : '(draft)';
 
+  var html = template(this);
   return html;
-
 };
 
 portfolioData.sort(function(curElem, nextElem) {
