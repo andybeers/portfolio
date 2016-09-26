@@ -10,8 +10,8 @@ var portfolioData = [
     postedOn: '2016-09-20',
   },
   {
-    title: '#',
-    category: '#',
+    title: 'Placeholder Title',
+    category: 'Placeholder Category',
     previewUrl: 'img/placeholder.png',
     previewAlt: 'Placeholder image',
     linkUrl: '#',
@@ -19,8 +19,8 @@ var portfolioData = [
     postedOn: '2016-09-20',
   },
   {
-    title: '#',
-    category: '#',
+    title: 'Placeholder Title',
+    category: 'Placeholder Category',
     previewUrl: 'img/placeholder.png',
     previewAlt: 'Placeholder image',
     linkUrl: '#',
@@ -28,8 +28,8 @@ var portfolioData = [
     postedOn: '2016-09-20',
   },
   {
-    title: '#',
-    category: '#',
+    title: 'Placeholder Title',
+    category: 'Placeholder Category',
     previewUrl: 'img/placeholder.png',
     previewAlt: 'Placeholder image',
     linkUrl: '#',

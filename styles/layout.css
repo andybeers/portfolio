@@ -5,7 +5,7 @@
 }
 
 .wrapper {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 0;
 }
@@ -53,4 +53,8 @@ Header
   font-size: 3em;
   color: white;
   margin: .75rem;
+}
+
+.main-nav span {
+  margin: .3em;
 }
