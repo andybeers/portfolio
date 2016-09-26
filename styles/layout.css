@@ -28,6 +28,7 @@ Header
 
 #name {
   float: left;
+  padding: 5px;
 }
 
 #name h1, h2{
