@@ -10,7 +10,7 @@ Portfolio.prototype.toHtml = function() {
 
   var source = $('#portfolio-template').html();
   var template = Handlebars.compile(source);
-
+  
   this.daysAgo = parseInt((new Date() - new Date(this.postedOn))/60/60/24/1000);
   this.postStatus = this.postedOn ? 'posted ' + this.daysAgo + ' days ago' : '(draft)';
 
