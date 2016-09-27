@@ -9,10 +9,12 @@ tabs.handleMainNav = function () {
 };
 
 tabs.renderPortfolio = function() {
+  console.log('renderPortfolio called');
   Portfolio.all.forEach(function(a) {
     $('#portfolio').append(a.toHtml());
   });
 };
 
 tabs.handleMainNav();
+
 Portfolio.fetchAll();
