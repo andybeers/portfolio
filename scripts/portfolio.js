@@ -16,7 +16,6 @@ Portfolio.prototype.toHtml = function() {
 };
 
 Portfolio.loadAll = function(dataWePassIn) {
-  console.log('loadAll called');
   dataWePassIn.sort(function(a,b) {
     return (new Date(b.postedOn)) - (new Date(a.postedOn));
   }).forEach(function(ele) {
@@ -26,12 +25,39 @@ Portfolio.loadAll = function(dataWePassIn) {
 
 Portfolio.fetchAll = function() {
   if (localStorage.portfolioItems) {
-    console.log('fetchAll with cache called');
-    var storedData = JSON.parse(localStorage.getItem('portfolioItems'));
-    Portfolio.loadAll(storedData);
-    tabs.renderPortfolio();
+    $.ajax({
+      type: 'HEAD',
+      url: '/data/portfolioItems.json',
+      complete: function (result) {
+        var eTag = result.getResponseHeader('ETag');
+        console.log('new ETag = ' + eTag + 'vs old ETag = ' + localStorage.getItem('eTag'));
+        if (eTag === localStorage.getItem('eTag')) {
+          var storedData = JSON.parse(localStorage.getItem('portfolioItems'));
+          Portfolio.loadAll(storedData);
+          tabs.renderPortfolio();
+        } else {
+          $.ajax({
+            type: 'GET',
+            url: '/data/portfolioItems.json',
+            success: successHandler
+          });
+          function successHandler(data) {
+            localStorage.setItem('portfolioItems', JSON.stringify(data));
+            Portfolio.loadAll(data);
+            tabs.renderPortfolio();
+          };
+          $.ajax({
+            type: 'HEAD',
+            url: '/data/portfolioItems.json',
+            complete: function (result) {
+              var eTag = result.getResponseHeader('ETag');
+              localStorage.setItem('eTag', eTag);
+            }
+          });
+        }
+      }
+    });
   } else {
-    console.log('fetchAll without cache called');
     $.ajax({
       type: 'GET',
       url: '/data/portfolioItems.json',
@@ -42,62 +68,13 @@ Portfolio.fetchAll = function() {
       Portfolio.loadAll(data);
       tabs.renderPortfolio();
     };
+    $.ajax({
+      type: 'HEAD',
+      url: '/data/portfolioItems.json',
+      complete: function (result) {
+        var eTag = result.getResponseHeader('ETag');
+        localStorage.setItem('eTag', eTag);
+      }
+    });
   }
 };
-
-// Portfolio.fetchAll = function() {
-//   if (localStorage.portfolioItems) {
-//     $.ajax({
-//       type: 'HEAD',
-//       url: '/data/portfolioItems.json',
-//       complete: function (result) {
-//         var eTag = result.getResponseHeader('ETag');
-//         console.log('new ETag' + eTag + 'old ETag' + localStorage.getItem('eTag'));
-//         if (eTag === localStorage.getItem('eTag')) {
-//           var storedData = JSON.parse(localStorage.getItem('portfolioItems'));
-//           Portfolio.loadAll(storedData);
-//           tabs.renderPortfolio();
-//         } else {
-//           $.ajax({
-//             type: 'GET',
-//             url: '/data/portfolioItems.json',
-//             success: successHandler
-//           });
-//           function successHandler(data) {
-//             localStorage.setItem('portfolioItems', JSON.stringify(data));
-//             Portfolio.loadAll(storedData);
-//             tabs.renderPortfolio();
-//           }
-//           $.ajax({
-//             type: 'HEAD',
-//             url: '/data/portfolioItems.json',
-//             complete: function (result) {
-//               var eTag = result.getResponseHeader('ETag');
-//               localStorage.setItem('eTag', eTag);
-//             }
-//           });
-//         }
-//       }
-//     });
-//   } else {
-//     $.ajax({
-//       type: 'GET',
-//       url: '/data/portfolioItems.json',
-//       success: successHandler
-//     });
-//     function successHandler(data) {
-//       localStorage.setItem('portfolioItems', JSON.stringify(data));
-//       Portfolio.loadAll(storedData);
-//       tabs.renderPortfolio();
-//     }
-//     $.ajax({
-//       type: 'HEAD',
-//       url: '/data/portfolioItems.json',
-//       complete: function (result) {
-//         var eTag = result.getResponseHeader('ETag');
-//         localStorage.setItem('eTag', eTag);
-//       }
-//     });
-//   }
-// };
-//
