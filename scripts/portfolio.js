@@ -1,4 +1,6 @@
-var portfolioItems = [];
+// var portfolioItems = [];
+
+Portfolio.all = [];
 
 function Portfolio (opts) {
   for (var key in opts) {
@@ -18,14 +20,66 @@ Portfolio.prototype.toHtml = function() {
   return html;
 };
 
-portfolioData.sort(function(curElem, nextElem) {
-  return (new Date(nextElem.postedOn)) - (new Date(curElem.postedOn));
-});
+Portfolio.loadAll = function(dataWePassIn) {
+  dataWePassIn.sort(function(a,b) {
+    return (new Date(b.postedOn)) - (new Date(a.postedOn));
+  }).forEach(function(ele) {
+    Portfolio.all.push(new Article(ele));
+  });
+};
 
-portfolioData.forEach(function(ele) {
-  portfolioItems.push(new Portfolio(ele));
-});
-
-portfolioItems.forEach(function(a) {
-  $('#portfolio').append(a.toHtml());
-});
+Portfolio.fetchAll = function() {
+  if (localStorage.portfolioItems.json) {
+    $.ajax({
+      type: 'HEAD',
+      url: '/data/portfolioItems.json',
+      complete: function (result) {
+        var eTag = result.getResponseHeader('ETag');
+        console.log(eTag + localStorage.getItem('eTag'));
+        if (eTag === localStorage.getItem('eTag')) {
+          var storedData = JSON.parse(localStorage.getItem('portfolioItems'));
+          Portfolio.loadAll(storedData);
+          tabs.renderPortfolio();
+        } else {
+          $.ajax({
+            type: 'GET',
+            url: '/data/portfolioItems.json',
+            success: successHandler
+          });
+          $.ajax({
+            type: 'HEAD',
+            url: '/data/portfolioItems.json',
+            complete: function (result) {
+              var eTag = result.getResponseHeader('ETag');
+              localStorage.setItem('eTag', eTag);
+            }
+          });
+          function successHandler(data) {
+            localStorage.setItem('portfolioItems',JSON.stringify(data));
+            Portfolio.loadAll(storedData);
+            tabs.renderPortfolio();
+          }
+        }
+      }
+    });
+  } else {
+    $.ajax({
+      type: 'GET',
+      url: '/data/portfolioItems.json',
+      success: successHandler
+    });
+    $.ajax({
+      type: 'HEAD',
+      url: '/data/portfolioItems.json',
+      complete: function (result) {
+        var eTag = result.getResponseHeader('ETag');
+        localStorage.setItem('eTag', eTag);
+      }
+    });
+    function successHandler(data) {
+      localStorage.setItem('/data/portfolioItems.json',JSON.stringify(data));
+      Portfolio.loadAll(storedData);
+      tabs.renderPortfolio();
+    }
+  }
+};
