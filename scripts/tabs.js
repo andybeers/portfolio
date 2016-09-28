@@ -8,4 +8,12 @@ tabs.handleMainNav = function () {
   $('.main-nav .tab:first').click();
 };
 
+tabs.renderPortfolio = function() {
+  Portfolio.all.forEach(function(a) {
+    $('#portfolio').append(a.toHtml());
+  });
+};
+
 tabs.handleMainNav();
+
+Portfolio.fetchAll();
