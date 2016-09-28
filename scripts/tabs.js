@@ -12,7 +12,9 @@ tabs.renderPortfolio = function() {
   Portfolio.all.forEach(function(a) {
     $('#portfolio').append(a.toHtml());
   });
+  $('#facts-template').append(Portfolio.getCats.factsToHtml());
 };
+
 
 tabs.handleMainNav();
 
