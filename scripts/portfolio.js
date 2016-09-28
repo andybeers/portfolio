@@ -14,10 +14,12 @@ Portfolio.prototype.toHtml = function() {
   return template(this);
 };
 
-Portfolio.prototype.factsToHtml = function() {
+Portfolio.prototype.catsToHtml = function() {
   var source = $('#facts-template').html();
   var template = Handlebars.compile(source);
-  return template(this);
+  Portfolio.getCats.forEach(function(cat){
+    return template(cat);
+  });
 };
 
 Portfolio.loadAll = function(dataWePassIn) {
