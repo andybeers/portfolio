@@ -13,7 +13,7 @@ tabs.renderPortfolio = function() {
     if($('#cat-filter option:contains("'+ a.category + '")').length === 0) {
       $('#cat-filter').append(a.toHtml($('#cat-filter-template')));
     };
-    $('#portfolio').append(a.toHtml($('#portfolio-template')));
+    $('#portfolio-items').append(a.toHtml($('#portfolio-template')));
   });
   tabs.handleMainNav();
 };

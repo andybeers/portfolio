@@ -133,7 +133,7 @@ Media queries
     max-width: 850px;
   }
 
-  #portfolio {
+  #portfolio-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
