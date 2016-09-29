@@ -14,19 +14,12 @@ Portfolio.prototype.toHtml = function() {
   return template(this);
 };
 
-Portfolio.prototype.catsToHtml = function(cats) {
-  cats.forEach(function(cat) {
-    $('#cats').append('<li>cat</li>');
-  });
-};
-
 Portfolio.loadAll = function(dataWePassIn) {
   dataWePassIn.sort(function(a,b) {
     return (new Date(b.postedOn)) - (new Date(a.postedOn));
   }).forEach(function(ele) {
     Portfolio.all.push(new Portfolio(ele));
   });
-  Portfolio.catsToHtml(getCats());
 };
 
 Portfolio.getAll = function() {
@@ -62,11 +55,19 @@ Portfolio.fetchAll = function() {
   }
 };
 
+Portfolio.prototype.catsToHtml = function(cats) {
+  cats.forEach(function(cat) {
+    $('#cats').append('<li>cat</li>');
+  });
+};
+
 //getCats will return array of non-duplicate portfolio item categories
 Portfolio.getCats = function() {
-  return Portfolio.all.map(function(portfolioItem) {
+  return Portfolio.all
+  .map(function(portfolioItem) {
     return portfolioItem.category;
-  }).reduce(function(array, curr) {
+  })
+  .reduce(function(array, curr) {
     if (array.indexOf(curr) === -1) {
       array.push(curr);
     }
