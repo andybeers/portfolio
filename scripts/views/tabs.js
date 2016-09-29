@@ -1,8 +1,9 @@
-(function(module){
+(function(module) {
 
   var tabs = {};
 
   tabs.handleMainNav = function () {
+    console.log('tabs.handleMainNav called');
     $('.main-nav').on('click', '.tab', function() {
       $('.tab-content').hide();
       $('#' + $(this).data('category')).fadeIn();
@@ -11,28 +12,32 @@
   };
 
   tabs.renderCatFilter = function() {
-    $('#category-filter').on('change', function() {
+    console.log('tabs.renderCatFilter called');
+    $('#cat-filter').on('change', function() {
       if ($(this).val()) {
-        $('article').hide();
-        $('article[data-category="' + $(this).val() + '"]').fadeIn();
+        $('portfolio').hide();
+        $('portfolio[data-category="' + $(this).val() + '"]').fadeIn();
       } else {
-        $('article').fadeIn();
-        $('article.template').hide();
+        $('portfolio').fadeIn();
+        $('portfolio.template').hide();
       }
-      $('#author-filter').val('');
     });
   };
 
   tabs.renderIndex = function() {
+    console.log('tabs.renderIndex called');
     Portfolio.all.forEach(function(a) {
       if($('#cat-filter option:contains("'+ a.category + '")').length === 0) {
         $('#cat-filter').append(a.toHtml($('#cat-filter-template')));
       };
       $('#portfolio-items').append(a.toHtml($('#portfolio-template')));
     });
+    tabs.renderCatFilter();
     tabs.handleMainNav();
   };
 
-  Portfolio.fetchAll(tabs.renderIndex);
   module.tabs = tabs;
-}(window));
+  Portfolio.fetchAll(tabs.renderIndex);
+
+
+})(window);
