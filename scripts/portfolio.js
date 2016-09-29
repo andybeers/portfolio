@@ -14,11 +14,9 @@ Portfolio.prototype.toHtml = function() {
   return template(this);
 };
 
-Portfolio.prototype.catsToHtml = function() {
-  var source = $('#facts-template').html();
-  var template = Handlebars.compile(source);
-  Portfolio.getCats.forEach(function(cat){
-    return template(cat);
+Portfolio.prototype.catsToHtml = function(cats) {
+  cats.forEach(function(cat) {
+    $('#cats').append('<li>cat</li>');
   });
 };
 
@@ -28,6 +26,7 @@ Portfolio.loadAll = function(dataWePassIn) {
   }).forEach(function(ele) {
     Portfolio.all.push(new Portfolio(ele));
   });
+  Portfolio.catsToHtml(getCats());
 };
 
 Portfolio.getAll = function() {
@@ -48,7 +47,7 @@ Portfolio.fetchAll = function() {
         if (!localStorage.eTag || eTag !== localStorage.eTag) {
           localStorage.eTag = eTag;
           Portfolio.getAll();
-          tabs.renderPortfolio();
+          // tabs.renderPortfolio();
           console.log('Outdated eTag, updating content');
         } else {
           console.log('eTag is current. loading from localStorage');
@@ -60,7 +59,6 @@ Portfolio.fetchAll = function() {
   } else {
     console.log('Nothing in local storage');
     Portfolio.getAll();
-    tabs.renderPortfolio();
   }
 };
 
