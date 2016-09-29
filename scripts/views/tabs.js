@@ -10,11 +10,25 @@ tabs.handleMainNav = function () {
 
 tabs.renderPortfolio = function() {
   Portfolio.all.forEach(function(a) {
-    $('#portfolio').append(a.toHtml());
+    if($('#cat-filter option:contains("'+ a.category + '")').length === 0) {
+      $('#cat-filter').append(a.toHtml($('#cat-filter-template')));
+    };
+    $('#portfolio').append(a.toHtml($('#portfolio-template')));
   });
+  tabs.handleMainNav();
 };
 
-
-tabs.handleMainNav();
-
 Portfolio.fetchAll();
+
+tabs.renderCatFilter = function() {
+  $('#category-filter').on('change', function() {
+    if ($(this).val()) {
+      $('article').hide();
+      $('article[data-category="' + $(this).val() + '"]').fadeIn();
+    } else {
+      $('article').fadeIn();
+      $('article.template').hide();
+    }
+    $('#author-filter').val('');
+  });
+};

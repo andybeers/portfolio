@@ -23,6 +23,9 @@
       <section class="article-body"></section>
     </article>
   </script>
+  <script id="cat-filter-template" type="text/x-handlebars-template">
+    <option value="{{category}}">{{category}}</option>
+  </script>
 </head>
 <body>
   <header class="main-header clearfix">
@@ -41,7 +44,11 @@
     </nav>
   </header>
   <div class="wrapper">
-    <section id="portfolio" class="tab-content"></section>
+    <section id="portfolio" class="tab-content">
+      <select id="cat-filter">
+        <option value="">-- Filter by Category --</option>
+      </select>
+    </section>
     <section id="about" class="tab-content">
       <div class="profile">
         <img src="img/profile.jpg">
@@ -55,7 +62,7 @@
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-  <script src="scripts/portfolio.js"></script>
-  <script src="scripts/tabs.js"></script>
+  <script src="scripts/models/portfolio.js"></script>
+  <script src="scripts/views/tabs.js"></script>
 </body>
 </html>

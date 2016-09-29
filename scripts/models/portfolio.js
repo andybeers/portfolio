@@ -6,8 +6,8 @@ function Portfolio (opts) {
 
 Portfolio.all = [];
 
-Portfolio.prototype.toHtml = function() {
-  var source = $('#portfolio-template').html();
+Portfolio.prototype.toHtml = function(scriptTemplateId) {
+  var source = scriptTemplateId.html();
   var template = Handlebars.compile(source);
   this.daysAgo = parseInt((new Date() - new Date(this.postedOn))/60/60/24/1000);
   this.postStatus = this.postedOn ? 'posted ' + this.daysAgo + ' days ago' : '(draft)';
@@ -40,7 +40,6 @@ Portfolio.fetchAll = function() {
         if (!localStorage.eTag || eTag !== localStorage.eTag) {
           localStorage.eTag = eTag;
           Portfolio.getAll();
-          // tabs.renderPortfolio();
           console.log('Outdated eTag, updating content');
         } else {
           console.log('eTag is current. loading from localStorage');
@@ -71,6 +70,6 @@ Portfolio.getCats = function() {
     if (array.indexOf(curr) === -1) {
       array.push(curr);
     }
-    return prev;
+    return array;
   }, []);
 };
