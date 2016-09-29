@@ -14,6 +14,14 @@ Portfolio.prototype.toHtml = function() {
   return template(this);
 };
 
+Portfolio.prototype.catsToHtml = function() {
+  var source = $('#facts-template').html();
+  var template = Handlebars.compile(source);
+  Portfolio.getCats.forEach(function(cat){
+    return template(cat);
+  });
+};
+
 Portfolio.loadAll = function(dataWePassIn) {
   dataWePassIn.sort(function(a,b) {
     return (new Date(b.postedOn)) - (new Date(a.postedOn));
@@ -54,4 +62,16 @@ Portfolio.fetchAll = function() {
     Portfolio.getAll();
     tabs.renderPortfolio();
   }
+};
+
+//getCats will return array of non-duplicate portfolio item categories
+Portfolio.getCats = function() {
+  return Portfolio.all.map(function(portfolioItem) {
+    return portfolioItem.category;
+  }).reduce(function(array, curr) {
+    if (array.indexOf(curr) === -1) {
+      array.push(curr);
+    }
+    return prev;
+  }, []);
 };
