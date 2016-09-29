@@ -11,15 +11,17 @@
     $('.main-nav .tab:first').click();
   };
 
-  tabs.renderCatFilter = function() {
-    console.log('tabs.renderCatFilter called');
+  tabs.handleCatFilter = function() {
+    console.log('tabs.handleCatFilter called');
     $('#cat-filter').on('change', function() {
-      if ($(this).val()) {
-        $('portfolio').hide();
-        $('portfolio[data-category="' + $(this).val() + '"]').fadeIn();
+      var selectVal = $(this).val();
+      if (selectVal) {
+        console.log(selectVal);
+        $('article').hide();
+        $('article[data-category="' + selectVal + '"]').fadeIn();
       } else {
-        $('portfolio').fadeIn();
-        $('portfolio.template').hide();
+        $('article').fadeIn();
+        $('article.template').hide();
       }
     });
   };
@@ -32,7 +34,7 @@
       };
       $('#portfolio-items').append(a.toHtml($('#portfolio-template')));
     });
-    tabs.renderCatFilter();
+    tabs.handleCatFilter();
     tabs.handleMainNav();
   };
 
