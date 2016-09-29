@@ -26,6 +26,9 @@
   <script id="cat-filter-template" type="text/x-handlebars-template">
     <option value="{{category}}">{{category}}</option>
   </script>
+  <script id="facts-template" type="text/x-handlebars-template">
+    <li>Number of {{category}} items: {{catCount}}</li>
+  </script>
 </head>
 <body>
   <header class="main-header clearfix">
@@ -49,6 +52,7 @@
         <option value="">-- Filter by Category --</option>
       </select>
       <div id="portfolio-items"></div>
+      <ul id="facts-list"></ul>
     </section>
     <section id="about" class="tab-content">
       <div class="profile">
@@ -58,8 +62,7 @@
     </section>
   </div>
   <footer>
-    <ul id="cats">
-    </ul>
+    &copy; 2016 Andy Beers
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>

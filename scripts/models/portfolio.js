@@ -59,7 +59,7 @@
     }
   };
 
-  Portfolio.prototype.catsToHtml = function(cats) {
+  Portfolio.catsToHtml = function(cats) {
     cats.forEach(function(cat) {
       $('#cats').append('<li>cat</li>');
     });
@@ -67,16 +67,19 @@
 
   //getCats will return array of non-duplicate portfolio item categories
   Portfolio.getCats = function() {
-    return Portfolio.all
-    .map(function(portfolioItem) {
-      return portfolioItem.category;
-    })
-    .reduce(function(array, curr) {
-      if (array.indexOf(curr) === -1) {
-        array.push(curr);
-      }
-      return array;
-    }, []);
+    return Portfolio.all.map(function(portfolioItem) {
+      return {
+        category: portfolioItem.category,
+        catCount: Portfolio.all.filter(function() {
+          return portfolioItem.category === category;
+        }).length.reduce(function(array, curr) {
+          if (array.indexOf(curr) === -1) {
+            array.push(curr);
+          }
+          return array;
+        }, [])
+      };
+    });
   };
 
   module.Portfolio = Portfolio;
