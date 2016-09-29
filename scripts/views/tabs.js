@@ -1,34 +1,38 @@
-var tabs = {};
+(function(module){
 
-tabs.handleMainNav = function () {
-  $('.main-nav').on('click', '.tab', function() {
-    $('.tab-content').hide();
-    $('#' + $(this).data('category')).fadeIn();
-  });
-  $('.main-nav .tab:first').click();
-};
+  var tabs = {};
 
-tabs.renderPortfolio = function() {
-  Portfolio.all.forEach(function(a) {
-    if($('#cat-filter option:contains("'+ a.category + '")').length === 0) {
-      $('#cat-filter').append(a.toHtml($('#cat-filter-template')));
-    };
-    $('#portfolio-items').append(a.toHtml($('#portfolio-template')));
-  });
-  tabs.handleMainNav();
-};
+  tabs.handleMainNav = function () {
+    $('.main-nav').on('click', '.tab', function() {
+      $('.tab-content').hide();
+      $('#' + $(this).data('category')).fadeIn();
+    });
+    $('.main-nav .tab:first').click();
+  };
 
-Portfolio.fetchAll();
+  tabs.renderCatFilter = function() {
+    $('#category-filter').on('change', function() {
+      if ($(this).val()) {
+        $('article').hide();
+        $('article[data-category="' + $(this).val() + '"]').fadeIn();
+      } else {
+        $('article').fadeIn();
+        $('article.template').hide();
+      }
+      $('#author-filter').val('');
+    });
+  };
 
-tabs.renderCatFilter = function() {
-  $('#category-filter').on('change', function() {
-    if ($(this).val()) {
-      $('article').hide();
-      $('article[data-category="' + $(this).val() + '"]').fadeIn();
-    } else {
-      $('article').fadeIn();
-      $('article.template').hide();
-    }
-    $('#author-filter').val('');
-  });
-};
+  tabs.renderIndex = function() {
+    Portfolio.all.forEach(function(a) {
+      if($('#cat-filter option:contains("'+ a.category + '")').length === 0) {
+        $('#cat-filter').append(a.toHtml($('#cat-filter-template')));
+      };
+      $('#portfolio-items').append(a.toHtml($('#portfolio-template')));
+    });
+    tabs.handleMainNav();
+  };
+
+  Portfolio.fetchAll(tabs.renderIndex);
+  module.tabs = tabs;
+}(window));
