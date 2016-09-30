@@ -62,7 +62,10 @@
   Portfolio.getCats = function() {
     return Portfolio.all.map(function(item) {
       return {
-        category: item.category
+        category: item.category,
+        numCat: Portfolio.all.filter(function(arg) {
+          return arg.category === item.category;
+        }).length
       };
     });
   };

@@ -28,11 +28,11 @@
 
   tabs.renderIndex = function() {
     console.log('tabs.renderIndex called');
-    Portfolio.all.forEach(function(a) {
-      if($('#cat-filter option:contains("'+ a.category + '")').length === 0) {
-        $('#cat-filter').append(a.toHtml($('#cat-filter-template')));
+    Portfolio.all.forEach(function(arg) {
+      if($('#cat-filter option:contains("'+ arg.category + '")').length === 0) {
+        $('#cat-filter').append(arg.toHtml($('#cat-filter-template')));
       };
-      $('#portfolio-items').append(a.toHtml($('#portfolio-template')));
+      $('#portfolio-items').append(arg.toHtml($('#portfolio-template')));
     });
     tabs.handleCatFilter();
     tabs.handleMainNav();

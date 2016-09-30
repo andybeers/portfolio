@@ -22,9 +22,10 @@ Nav
 
 .main-nav li {
   text-align: center;
-  padding: .25em;
+  padding: .3em;
   margin: 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  font-size: 1em;
 }
 
 .main-nav span {
@@ -84,14 +85,18 @@ Category List
 
 #portfolio ul {
   list-style: none;
-  text-align: center;
+  padding: 0;
+}
+
+#facts li {
+  font-size: .8em;
 }
 
 /****************
 Media queries
 *****************/
 
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 490px) {
 
   .main-header {
     border: none;
@@ -133,13 +138,17 @@ Media queries
     font-size: 1.75em;
   }
 
-  nav li {
-    font-size: 1.3em;
+  #name {
+    float: none;
+    text-align: center;
   }
 
-  .wrapper {
-    width: 75%;
-    max-width: 850px;
+}
+
+@media only screen and (min-width: 550px) {
+
+  .main-nav li {
+    font-size: 1em;
   }
 
   #portfolio-items {
@@ -152,9 +161,17 @@ Media queries
     width: 40%;
   }
 
-  #name {
-    float: none;
-    text-align: center;
+  .selected {
+    border-bottom: 2px solid white;
+  }
+
+}
+
+@media only screen and (min-width: 850px) {
+
+  .wrapper {
+    width: 75%;
+    max-width: 900px;
   }
 
 }
