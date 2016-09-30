@@ -36,6 +36,11 @@
     });
     tabs.handleCatFilter();
     tabs.handleMainNav();
+    tabs.renderFacts();
+  };
+
+  tabs.renderFacts = function() {
+    Portfolio.getCats().forEach($('#facts-list').append(toHtml($('#facts-template'))));
   };
 
   module.tabs = tabs;

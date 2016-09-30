@@ -59,12 +59,6 @@
     }
   };
 
-  Portfolio.catsToHtml = function(cats) {
-    cats.forEach(function(cat) {
-      $('#cats').append('<li>cat</li>');
-    });
-  };
-
   //getCats will return array of non-duplicate portfolio item categories
   Portfolio.getCats = function() {
     return Portfolio.all.map(function(portfolioItem) {
