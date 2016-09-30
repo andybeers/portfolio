@@ -59,7 +59,6 @@
     }
   };
 
-  //getCats will return array of non-duplicate portfolio item categories
   Portfolio.getCats = function() {
     return Portfolio.all.map(function(item) {
       return {

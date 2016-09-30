@@ -36,13 +36,16 @@
     });
     tabs.handleCatFilter();
     tabs.handleMainNav();
-    tabs.renderFacts();
+    tabs.renderFacts($('#facts-template'));
   };
 
-  tabs.renderFacts = function() {
-    // console.log(Portfolio.getCats());
+  tabs.renderFacts = function(templateId) {
     Portfolio.getCats().forEach(function(item) {
-      $('#facts-list').append(item.toHtml($('#facts-template')));
+      var source = templateId.html();
+      var template = Handlebars.compile(source);
+      if($('#facts-list li:contains("'+item.category+'")').length === 0) {
+        $('#facts-list').append(template(item));
+      }
     });
   };
 
