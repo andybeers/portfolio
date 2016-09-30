@@ -79,6 +79,15 @@ About items
 }
 
 /****************
+Category List
+*****************/
+
+#portfolio ul {
+  list-style: none;
+  text-align: center;
+}
+
+/****************
 Media queries
 *****************/
 
