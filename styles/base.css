@@ -45,6 +45,10 @@ p {
   color: #595959;
 }
 
+h3 {
+  color: rgb(44, 103, 134);
+}
+
 .main-nav ul {
   background-color: #2C6786;
 }
@@ -61,6 +65,6 @@ nav a:hover {
   color: #122d3b;
 }
 
-#portfolio article {
-  background-color: #fff3f2
+#facts-list li {
+  color: #595959;
 }
