@@ -3,22 +3,19 @@
   var tabs = {};
 
   tabs.handleMainNav = function () {
-    console.log('tabs.handleMainNav called');
     $('.main-nav').on('click', '.tab', function() {
-      $('.main-nav .selected').removeClass('selected');
-      $(this).addClass('selected');
       $('.tab-content').hide();
       $('#' + $(this).data('category')).fadeIn();
+      $('.main-nav .selected').removeClass('selected');
+      $(this).addClass('selected');
     });
     $('.main-nav .tab:first').click();
   };
 
   tabs.handleCatFilter = function() {
-    console.log('tabs.handleCatFilter called');
     $('#cat-filter').on('change', function() {
       var selectVal = $(this).val();
       if (selectVal) {
-        console.log(selectVal);
         $('article').hide();
         $('article[data-category="' + selectVal + '"]').fadeIn();
       } else {
@@ -29,7 +26,6 @@
   };
 
   tabs.renderIndex = function() {
-    console.log('tabs.renderIndex called');
     Portfolio.all.forEach(function(arg) {
       if($('#cat-filter option:contains("'+ arg.category + '")').length === 0) {
         $('#cat-filter').append(arg.toHtml($('#cat-filter-template')));
