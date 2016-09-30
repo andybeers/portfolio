@@ -5,6 +5,8 @@
   tabs.handleMainNav = function () {
     console.log('tabs.handleMainNav called');
     $('.main-nav').on('click', '.tab', function() {
+      $('.main-nav .selected').removeClass('selected');
+      $(this).addClass('selected');
       $('.tab-content').hide();
       $('#' + $(this).data('category')).fadeIn();
     });

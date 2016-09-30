@@ -17,7 +17,7 @@
         <div class="preview">
           <a href="{{linkUrl}}"><img src="{{previewUrl}}" alt="{{previewAlt}}"></a>
           <p class="description">{{{description}}}</p>
-          {{postStatus}}
+          <h3>{{postStatus}}</h3>
         </div>
       </header>
       <section class="article-body"></section>
@@ -27,7 +27,7 @@
     <option value="{{category}}">{{category}}</option>
   </script>
   <script id="facts-template" type="text/x-handlebars-template">
-    <li>{{numCat}} items of category: {{category}}</li>
+    <li>{{category}}: <strong>{{numCat}}</strong> items.</li>
   </script>
 </head>
 <body>
@@ -52,7 +52,7 @@
         <option value="">-- Filter by Category --</option>
       </select>
       <div id="portfolio-items"></div>
-      <h3>Project categories:</h3>
+      <h3 class="facts">Project categories:</h3>
       <ul id="facts-list">
       </ul>
     </section>

@@ -56,8 +56,6 @@ Portfolio items
 #portfolio article {
   margin: .75em .25em;
   padding: 1em;
-  border: 3px solid #ffe2d2;
-  border-radius: 14px;
 }
 
 #portfolio h1 {
@@ -70,8 +68,12 @@ Category Filter
 *****************/
 
 select {
-  padding: .8em;
+  padding: 1em;
   margin: .25em;
+  background-color: #e6e6e6;
+  color: #2C6786;
+  border: none;
+  box-shadow: 1px 1px 3px #666666;
 }
 
 
@@ -96,9 +98,10 @@ Category List
 #portfolio ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-#facts li {
+#facts-list li {
   font-size: .8em;
 }
 
@@ -153,6 +156,10 @@ Media queries
     text-align: center;
   }
 
+  .selected li {
+    border-bottom: 2px solid #cce6ff;
+  }
+
 }
 
 @media only screen and (min-width: 550px) {
@@ -169,10 +176,6 @@ Media queries
 
   #portfolio article {
     width: 40%;
-  }
-
-  .selected {
-    border-bottom: 2px solid white;
   }
 
 }
