@@ -40,8 +40,9 @@
   };
 
   tabs.renderFacts = function() {
-    Portfolio.getCats().forEach(function(a) {
-      $('#facts-list').append(a.toHtml($('#facts-template')));
+    // console.log(Portfolio.getCats());
+    Portfolio.getCats().forEach(function(item) {
+      $('#facts-list').append(item.toHtml($('#facts-template')));
     });
   };
 
