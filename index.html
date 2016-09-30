@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styles/modules.css">
   <title>Andy Beers | Developer</title>
   <script id="portfolio-template" type="text/x-handlebars-template">
-    <article>
+    <article data-category="{{category}}">
       <header>
         <h1 class="title">{{title}}</h1>
         <div class="preview">
@@ -23,9 +23,12 @@
       <section class="article-body"></section>
     </article>
   </script>
+  <script id="cat-filter-template" type="text/x-handlebars-template">
+    <option value="{{category}}">{{category}}</option>
+  </script>
   <script id="facts-template" type="text/x-handlebars-template">
-      <li><strong>{{cat}}</strong></li>
-    </script>
+    <li>{{numCat}} items of category: {{category}}</li>
+  </script>
 </head>
 <body>
   <header class="main-header clearfix">
@@ -36,7 +39,7 @@
     <nav class="main-nav">
       <div class="icon-menu"></div>
       <ul>
-        <li data-category="portfolio" class="tab"><a href="#" class="icon-file-text"><span>Portfolio</span></a></li>
+        <li data-category="portfolio" class="tab selected"><a href="#" class="icon-file-text"><span>Portfolio</span></a></li>
         <li data-category="about" class="tab"><a href="#" class="icon-file-text"><span>About</span></a></li>
         <li><a href="https://twitter.com/AndrewBeers" class="icon-twitter"><span>Twitter</span></a></li>
         <li><a href="https://github.com/andybeers" class="icon-github"><span>Github</span></a></li>
@@ -44,7 +47,15 @@
     </nav>
   </header>
   <div class="wrapper">
-    <section id="portfolio" class="tab-content"></section>
+    <section id="portfolio" class="tab-content">
+      <select id="cat-filter">
+        <option value="">-- Filter by Category --</option>
+      </select>
+      <div id="portfolio-items"></div>
+      <h3>Project categories:</h3>
+      <ul id="facts-list">
+      </ul>
+    </section>
     <section id="about" class="tab-content">
       <div class="profile">
         <img src="img/profile.jpg">
@@ -53,12 +64,11 @@
     </section>
   </div>
   <footer>
-    <ul id="facts-template">
-    </ul>
+    &copy; 2016 Andy Beers
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-  <script src="scripts/portfolio.js"></script>
-  <script src="scripts/tabs.js"></script>
+  <script src="scripts/models/portfolio.js"></script>
+  <script src="scripts/views/tabs.js"></script>
 </body>
 </html>
