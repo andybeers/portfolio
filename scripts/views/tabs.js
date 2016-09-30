@@ -40,7 +40,9 @@
   };
 
   tabs.renderFacts = function() {
-    Portfolio.getCats().forEach($('#facts-list').append(toHtml($('#facts-template'))));
+    Portfolio.getCats().forEach(function(a) {
+      $('#facts-list').append(a.toHtml($('#facts-template')));
+    });
   };
 
   module.tabs = tabs;

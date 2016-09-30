@@ -64,7 +64,7 @@
     return Portfolio.all.map(function(portfolioItem) {
       return {
         category: portfolioItem.category,
-        catCount: Portfolio.all.filter(function() {
+        catCount: Portfolio.all.filter(function(portfolioItem) {
           return portfolioItem.category === category;
         }).length.reduce(function(array, curr) {
           if (array.indexOf(curr) === -1) {
