@@ -66,6 +66,16 @@ Portfolio items
 }
 
 /****************
+Category Filter
+*****************/
+
+select {
+  padding: .8em;
+  margin: .25em;
+}
+
+
+/****************
 About items
 *****************/
 

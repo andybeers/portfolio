@@ -38,7 +38,7 @@
     console.log('Portfolio.fetchAll called');
     if (localStorage.portfolioItems) {
       $.ajax({
-        type: 'HEAD',
+        method: 'HEAD',
         url: '/data/portfolioItems.json',
         success: function (data, message, xhr) {
           var eTag = xhr.getResponseHeader('eTag');
