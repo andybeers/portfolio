@@ -32,15 +32,15 @@
 </head>
 <body>
   <header class="main-header clearfix">
-    <a id="name" href src="#">
+    <a id="name">
       <h1>Andy Beers</h1>
       <h2>Developer</h2>
     </a>
     <nav class="main-nav">
       <div class="icon-menu"></div>
       <ul>
-        <li data-category="portfolio" class="tab selected"><a href="#" class="icon-file-text"><span>Portfolio</span></a></li>
-        <li data-category="about" class="tab"><a href="#" class="icon-file-text"><span>About</span></a></li>
+        <li data-category="portfolio" class="tab selected"><a href="/" class="icon-file-text"><span>Portfolio</span></a></li>
+        <li data-category="about" class="tab"><a href="/about" class="icon-file-text"><span>About</span></a></li>
         <li><a href="https://twitter.com/AndrewBeers" class="icon-twitter"><span>Twitter</span></a></li>
         <li><a href="https://github.com/andybeers" class="icon-github"><span>Github</span></a></li>
       </ul>
@@ -64,11 +64,16 @@
     </section>
   </div>
   <footer>
+    <p><a href="https://github.com/andybeers" class="icon-github"></a><a href="https://twitter.com/AndrewBeers" class="icon-twitter"></a></p>
     &copy; 2016 Andy Beers
   </footer>
+  <script src="vendor/vendor-scripts/page.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script src="scripts/models/portfolio.js"></script>
   <script src="scripts/views/tabs.js"></script>
+  <script src="scripts/controllers/portfolioController.js"></script>
+  <script src="scripts/controllers/aboutController.js"></script>
+  <script src="scripts/controllers/routes.js"></script>
 </body>
 </html>

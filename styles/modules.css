@@ -109,7 +109,7 @@ Category List
 Media queries
 *****************/
 
-@media only screen and (min-width: 490px) {
+@media only screen and (min-width: 450px) {
 
   .main-header {
     border: none;
@@ -156,7 +156,7 @@ Media queries
     text-align: center;
   }
 
-  .selected li {
+  li.selected {
     border-bottom: 2px solid #cce6ff;
   }
 
@@ -165,7 +165,7 @@ Media queries
 @media only screen and (min-width: 550px) {
 
   .main-nav li {
-    font-size: 1em;
+    font-size: 1.25em;
   }
 
   #portfolio-items {
@@ -185,6 +185,15 @@ Media queries
   .wrapper {
     width: 75%;
     max-width: 900px;
+  }
+
+  #name {
+    text-align: left;
+  }
+
+  .main-nav ul {
+    float: right;
+    border-radius: 15px 0 0 15px;
   }
 
 }

@@ -17,7 +17,6 @@
   };
 
   Portfolio.loadAll = function(dataWePassIn) {
-    console.log('Portfolio.loadAll called');
     dataWePassIn.sort(function(a,b) {
       return (new Date(b.postedOn)) - (new Date(a.postedOn));
     }).forEach(function(ele) {
@@ -26,7 +25,6 @@
   };
 
   Portfolio.getAll = function(nextFunction) {
-    console.log('Portfolio.getAll called');
     $.getJSON('/data/portfolioItems.json', function(responseData) {
       Portfolio.loadAll(responseData);
       localStorage.portfolioItems = JSON.stringify(responseData);
@@ -35,7 +33,6 @@
   };
 
   Portfolio.fetchAll = function(nextFunction) {
-    console.log('Portfolio.fetchAll called');
     if (localStorage.portfolioItems) {
       $.ajax({
         method: 'HEAD',
