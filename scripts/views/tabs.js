@@ -2,16 +2,6 @@
 
   var tabs = {};
 
-  tabs.handleMainNav = function () {
-    $('.main-nav').on('click', '.tab', function() {
-      $('.tab-content').hide();
-      $('#' + $(this).data('category')).fadeIn();
-      $('.main-nav .selected').removeClass('selected');
-      $(this).addClass('selected');
-    });
-    $('.main-nav .tab:first').click();
-  };
-
   tabs.handleCatFilter = function() {
     $('#cat-filter').on('change', function() {
       var selectVal = $(this).val();
@@ -33,7 +23,6 @@
       $('#portfolio-items').append(arg.toHtml($('#portfolio-template')));
     });
     tabs.handleCatFilter();
-    tabs.handleMainNav();
     tabs.renderFacts($('#facts-template'));
   };
 
