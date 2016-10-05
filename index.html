@@ -29,6 +29,12 @@
   <script id="facts-template" type="text/x-handlebars-template">
     <li>{{category}}: <strong>{{numCat}}</strong> items.</li>
   </script>
+  <script id="git-template" type="text/x-handlebars-template">
+      <li>Github: {{login}}</li>
+      <li>{{public_repos}} public repos.</li>
+      <li>{{followers}} followers.</li>
+      <li>{{following}} following.</li>
+    </script>
 </head>
 <body>
   <header class="main-header clearfix">
@@ -61,17 +67,21 @@
         <img src="img/profile.jpg">
       </div>
       <p>Andy is a developer who loves minimal design, whitespace, and specialty coffee.</p>
+      <ul id="github-facts"></ul>
     </section>
   </div>
   <footer>
     <p><a href="https://github.com/andybeers" class="icon-github"></a><a href="https://twitter.com/AndrewBeers" class="icon-twitter"></a></p>
     &copy; 2016 Andy Beers
   </footer>
+  <script src="githubToken.js"></script>
   <script src="vendor/vendor-scripts/page.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script src="scripts/models/users.js"></script>
   <script src="scripts/models/portfolio.js"></script>
   <script src="scripts/views/tabs.js"></script>
+  <script src="scripts/views/usersView.js"></script>
   <script src="scripts/controllers/portfolioController.js"></script>
   <script src="scripts/controllers/aboutController.js"></script>
   <script src="scripts/controllers/routes.js"></script>
