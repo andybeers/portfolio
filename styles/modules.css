@@ -91,11 +91,15 @@ About items
   width: 35%;
 }
 
+#github-facts li {
+  font-size: .8em;
+}
+
 /****************
 Category List
 *****************/
 
-#portfolio ul {
+#portfolio ul, #github-facts li {
   list-style: none;
   padding: 0;
   margin: 0;

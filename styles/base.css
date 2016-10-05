@@ -65,6 +65,6 @@ nav a:hover {
   color: #122d3b;
 }
 
-#facts-list li {
+#facts-list li, #github-facts li {
   color: #595959;
 }
