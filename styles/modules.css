@@ -99,7 +99,7 @@ About items
 Category List
 *****************/
 
-#portfolio ul, #github-facts ul {
+#portfolio ul, #github-facts {
   list-style: none;
   padding: 0;
   margin: 0;
